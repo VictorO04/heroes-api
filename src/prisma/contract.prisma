@@ -1,0 +1,7 @@
+model Hero {
+  id          Int     @id @default(autoincrement())
+  name        String  @unique
+  publisher   String
+  description String?
+  imageUrl    String?
+}
