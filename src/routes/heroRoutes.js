@@ -1,8 +1,9 @@
 import { Router } from "express";
-import { getHeroes } from "../controllers/heroController.js";
+import { getHeroes, getHeroById } from "../controllers/heroController.js";
 
 const router = Router();
 
 router.get("/", getHeroes);
+router.get("/:id", getHeroById);
 
 export default router;
