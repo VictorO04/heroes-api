@@ -1,6 +1,7 @@
 import express from "express";
 import "dotenv/config";
 import heroRoutes from "./routes/heroRoutes.js";
+import globalError from "./middlewares/globalError.js";
 
 const app = express();
 app.use(express.json());
@@ -12,6 +13,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/heroes", heroRoutes);
+
+app.use(globalError);
 
 app.use((req, res) => {
     res.status(404).json({
